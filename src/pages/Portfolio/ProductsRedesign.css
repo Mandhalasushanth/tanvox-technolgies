@@ -4539,3 +4539,122 @@
   }
 }
 
+/* ==========================================
+   CASE STUDY RESPONSIVE FIX
+========================================== */
+
+.case-study-details-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1.3fr;
+  gap: 48px;
+}
+
+.case-study-features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.case-study-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.case-study-gallery-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* Tablet */
+
+@media (max-width: 992px) {
+
+  .case-study-details-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .case-study-gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .case-study-kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+  .saas-container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .case-study-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .case-study-kpi-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .saas-viewer-thumbs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .detail-back-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .saas-breadcrumbs {
+    display: none;
+  }
+
+  .saas-glass-card {
+    padding: 18px !important;
+  }
+}
+
+/* Small Mobile */
+
+@media (max-width: 480px) {
+
+  .saas-hero-title {
+    font-size: 2rem !important;
+    line-height: 1.2;
+  }
+
+  .saas-hero-desc {
+    font-size: 1rem !important;
+  }
+
+  .saas-showcase-frame {
+    overflow: hidden;
+  }
+
+  .saas-viewer-img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .chrome-address-bar {
+    display: none;
+  }
+
+  .saas-btn-primary,
+  .saas-btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}

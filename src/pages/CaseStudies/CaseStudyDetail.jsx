@@ -101,7 +101,10 @@ export default function CaseStudyDetail({ studyId }) {
           style={{ display: 'flex', flexDirection: 'column', gap: '60px' }}
         >
           {/* ================= SECTION 1: ABOUT PLATFORM | KEY FEATURES ================= */}
-          <motion.div className="saas-details-grid" variants={itemVariants} style={{ display: 'grid', gridTemplateColumns: '1.1fr 1.3fr', gap: '48px' }}>
+           <motion.div
+  className="case-study-details-grid"
+  variants={itemVariants}
+>
             {/* Left: About Platform */}
             <div className="saas-glass-card" style={{ height: 'fit-content' }}>
               <h3 style={{ fontSize: '1.5rem', fontWeight: '700', marginBottom: '20px', color: '#0f172a', display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -142,7 +145,7 @@ export default function CaseStudyDetail({ studyId }) {
               <h3 style={{ fontSize: '1.5rem', fontWeight: '700', marginBottom: '24px', color: '#0f172a', display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <span style={{ color: study.colorAccent }}>⚡</span> Key Features
               </h3>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px' }}>
+               <div className="case-study-features-grid">
                 {study.features.map((feature, idx) => (
                   <div 
                     key={idx} 
@@ -169,7 +172,10 @@ export default function CaseStudyDetail({ studyId }) {
           <div className="saas-divider" style={{ margin: 0 }}></div>
 
           {/* ================= SECTION 2: IDEAL FOR | BENEFITS ================= */}
-          <motion.div className="saas-details-grid" variants={itemVariants} style={{ display: 'grid', gridTemplateColumns: '1.1fr 1.3fr', gap: '48px' }}>
+          <motion.div
+  className="case-study-details-grid"
+  variants={itemVariants}
+>
             {/* Left: Ideal For */}
             <div className="saas-glass-card" style={{ height: 'fit-content' }}>
               <h3 style={{ fontSize: '1.5rem', fontWeight: '700', marginBottom: '20px', color: '#0f172a', display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -205,7 +211,7 @@ export default function CaseStudyDetail({ studyId }) {
               </h3>
 
               {/* KPI cards grid */}
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', marginBottom: '24px' }}>
+ <div className="case-study-kpi-grid">
                 <div className="saas-glass-card" style={{ padding: '20px 12px', textAlign: 'center', border: `1px solid rgba(16, 185, 129, 0.15)`, background: 'rgba(16, 185, 129, 0.02)' }}>
                   <div style={{ fontSize: '1.6rem', fontWeight: '800', color: '#10b981', fontFamily: 'var(--font-display)' }}>
                     {study.impact.kpi}
@@ -256,8 +262,7 @@ export default function CaseStudyDetail({ studyId }) {
             <p style={{ color: '#64748b', marginBottom: '32px', fontSize: '0.95rem' }}>
               Click on any screenshot to view a high-resolution preview inside the interactive zoom gallery.
             </p>
-
-            <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: '48px', alignItems: 'start' }}>
+             <div className="case-study-gallery-grid">
               {/* Chrome Mockup Carousel */}
               <div className="saas-showcase-frame" style={{ margin: 0, width: '100%' }}>
                 <div className="saas-frame-chrome">
