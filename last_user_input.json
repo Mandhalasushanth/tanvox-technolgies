@@ -1,0 +1,44 @@
+﻿
+C:\Users\wasee.LAPTOP-4EJATDR4\.gemini\antigravity-ide\brain\9c97e126-edf8-4857-9cdf-c5f50d88641f\.system_generated\log
+s\transcript.jsonl:1414:{"step_index":1063,"source":"USER_EXPLICIT","type":"USER_INPUT","status":"DONE","created_at":"2
+026-06-09T13:02:44Z","content":"<USER_REQUEST>\n@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans
+:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@300;400;500;600;700;800&displa
+y=swap');\n\n:root {\n  /* Color System */\n  --color-red: #FF1E3C;\n  --color-red-light: #FF6B6B;\n  
+--color-red-dark: #C41E3A;\n  --color-primary-pink: #ff0066;\n  --color-navy: #0B2E8A;\n  --color-primary-navy: 
+#001a72;\n  --color-dark-navy: #020B2D;\n  --color-white: #FFFFFF;\n  --color-purple: #7C3AED;\n  
+--color-purple-light: #A78BFA;\n  --color-blue: #3B82F6;\n  --color-blue-light: #60A5FA;\n  \n  --color-text-primary: 
+#000000;\n  --color-text-secondary: #1a1a1a;\n  --color-text-muted: #1a1a1a;\n  --color-light-gray: #F8FAFC;\n  
+--color-gray-100: #F1F5F9;\n  --color-gray-200: #E2E8F0;\n  --color-gray-300: #CBD5E1;\n  \n  /* Gradients */\n  
+--grad-primary: linear-gradient(135deg, #ff0066 0%, #001a72 100%);\n  --grad-red: linear-gradient(135deg, 
+var(--color-red) 0%, var(--color-red-dark) 100%);\n  --grad-blue: linear-gradient(135deg, var(--color-blue) 0%, 
+var(--color-blue-light) 100%);\n  --grad-purple: linear-gradient(135deg, var(--color-purple) 0%, 
+var(--color-purple-light) 100%);\n  --grad-navy-dark: linear-gradient(135deg, #0B2E8A 0%, #020B2D 100%);\n  
+--grad-promo-card: linear-gradient(145deg, #030D36 0%, #01061F 100%);\n  --grad-red-glow: radial-gradient(circle, 
+rgba(255, 0, 102, 0.3) 0%, transparent 70%);\n  --grad-navy-glow: radial-gradient(circle, rgba(0, 26, 114, 0.3) 0%, 
+transparent 70%);\n\n  /* Typography */\n  --font-display: 'Plus Jakarta Sans', 'Sora', sans-serif;\n  --font-body: 
+'Plus Jakarta Sans', sans-serif;\n  --font-mono: 'Space Grotesk', sans-serif;\n\n  /* Spacing & Dimensions */\n  
+--header-height: 88px;\n  --header-height-scrolled: 72px;\n  --border-radius-sm: 8px;\n  --border-radius-md: 16px;\n  
+--border-radius-lg: 24px;\n  \n  /* Transitions */\n  --transition-speed: 0.35s;\n  --transition-curve: 
+cubic-bezier(0.25, 1, 0.5, 1);\n  --transition-all: all var(--transition-speed) var(--transition-curve);\n}\n\n/* 
+Reset & Baseline */\n*, \n<truncated 45215 bytes>\n;\n  color: white;\n  animation: cardFloat4 4.2s ease-in-out 
+infinite;\n}\n.card-5 {\n  top: 42%; left: 2%;\n  background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);\n  
+color: white;\n  animation: cardFloat5 4.7s ease-in-out infinite;\n}\n.card-6 {\n  top: 40%; right: 2%;\n  background: 
+linear-gradient(135deg, #10b981 0%, #34d399 100%);\n  color: white;\n  animation: cardFloat6 4.6s ease-in-out 
+infinite;\n}\n@keyframes cardFloat1 {\n  0%,100% { transform: translateY(0px) rotate(0deg); }\n  50% { transform: 
+translateY(-15px) rotate(3deg); }\n}\n@keyframes cardFloat2 {\n  0%,100% { transform: translateY(0px) rotate(0deg); 
+}\n  50% { transform: translateY(-12px) rotate(-3deg); }\n}\n@keyframes cardFloat3 {\n  0%,100% { transform: 
+translateY(0px) rotate(0deg); }\n  50% { transform: translateY(-18px) rotate(2deg); }\n}\n@keyframes cardFloat4 {\n  
+0%,100% { transform: translateY(0px) rotate(0deg); }\n  50% { transform: translateY(-10px) rotate(-2deg); 
+}\n}\n@keyframes cardFloat5 {\n  0%,100% { transform: translateY(0px) rotate(0deg); }\n  50% { transform: 
+translateY(-14px) rotate(4deg); }\n}\n@keyframes cardFloat6 {\n  0%,100% { transform: translateY(0px) rotate(0deg); 
+}\n  50% { transform: translateY(-16px) rotate(-4deg); }\n}\n.card-icon { font-size:2.2rem; margin-bottom:6px; 
+}\n.card-title { font-size:0.85rem; font-weight:800; letter-spacing:0.5px; text-transform:uppercase; }\n\n/* Center 
+Logo Card */\n.center-logo-card {\n  position: absolute; top:50%; left:50%; transform: translate(-50%,-50%);\n  width: 
+150px; height: 150px; border-radius: 28px;\n  background: linear-gradient(135deg, #ffffff 0%, #fff 25%, #0f172a 
+100%);\n  box-shadow:\n    0 20px 60px rgba(0,0,0,0.45),\n    0 0 70px rgba(255,0,102,0.35),\n    0 0 70px 
+rgba(0,102,255,0.35);\n  display:flex; flex-direction:column; align-items:center; justify-content:center;\n  
+z-index:100;\n  border:3px solid transparent;\n  border-image: linear-gradient(1\n<truncated 47138 bytes>\n\nNOTE: The 
+output was truncated because it was too long. Use a more targeted query or a smaller range to get the information you 
+need."}
+
+

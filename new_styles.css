@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Color System */
+  --color-red: #FF1E3C;
+  --color-red-light: #FF6B6B;
+  --color-red-dark: #C41E3A;
+  --color-primary-pink: #ff0066;
+  --color-navy: #0B2E8A;
+  --color-primary-navy: #001a72;
+  --color-dark-navy: #020B2D;
+  --color-white: #FFFFFF;
+  --color-purple: #7C3AED;
+  --color-purple-light: #A78BFA;
+  --color-blue: #3B82F6;
+  --color-blue-light: #60A5FA;
+  
+  --color-text-primary: #000000;
+  --color-text-secondary: #1a1a1a;
+  --color-text-muted: #1a1a1a;
+  --color-light-gray: #F8FAFC;
+  --color-gray-100: #F1F5F9;
+  --color-gray-200: #E2E8F0;
+  --color-gray-300: #CBD5E1;
+  
+  /* Gradients */
+  --grad-primary: linear-gradient(135deg, #ff0066 0%, #001a72 100%);
+  --grad-red: linear-gradient(135deg, var(--color-red) 0%, var(--color-red-dark) 100%);
+  --grad-blue: linear-gradient(135deg, var(--color-blue) 0%, var(--color-blue-light) 100%);
+  --grad-purple: linear-gradient(135deg, var(--color-purple) 0%, var(--color-purple-light) 100%);
+  --grad-navy-dark: linear-gradient(135deg, #0B2E8A 0%, #020B2D 100%);
+  --grad-promo-card: linear-gradient(145deg, #030D36 0%, #01061F 100%);
+  --grad-red-glow: radial-gradient(circle, rgba(255, 0, 102, 0.3) 0%, transparent 70%);
+  --grad-navy-glow: radial-gradient(circle, rgba(0, 26, 114, 0.3) 0%, transparent 70%);
+
+  /* Typography */
+  --font-display: 'Plus Jakarta Sans', 'Sora', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'Space Grotesk', sans-serif;
+
+  /* Spacing & Dimensions */
+  --header-height: 88px;
+  --header-height-scrolled: 72px;
+  --border-radius-sm: 8px;
+  --border-radius-md: 16px;
+  --border-radius-lg: 24px;
+  
+  /* Transitions */
+  --transition-speed: 0.35s;
+  --transition-curve: cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-all: all var(--transition-speed) var(--transition-curve);
+}
+
+/* Reset & Baseline */
+*, 
+<truncated 45215 bytes>
+;
+  color: white;
+  animation: cardFloat4 4.2s ease-in-out infinite;
+}
+.card-5 {
+  top: 42%; left: 2%;
+  background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+  color: white;
+  animation: cardFloat5 4.7s ease-in-out infinite;
+}
+.card-6 {
+  top: 40%; right: 2%;
+  background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+  color: white;
+  animation: cardFloat6 4.6s ease-in-out infinite;
+}
+@keyframes cardFloat1 {
+  0%,100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(3deg); }
+}
+@keyframes cardFloat2 {
+  0%,100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(-3deg); }
+}
+@keyframes cardFloat3 {
+  0%,100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-18px) rotate(2deg); }
+}
+@keyframes cardFloat4 {
+  0%,100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(-2deg); }
+}
+@keyframes cardFloat5 {
+  0%,100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(4deg); }
+}
+@keyframes cardFloat6 {
+  0%,100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-16px) rotate(-4deg); }
+}
+.card-icon { font-size:2.2rem; margin-bottom:6px; }
+.card-title { font-size:0.85rem; font-weight:800; letter-spacing:0.5px; text-transform:uppercase; }
+
+/* Center Logo Card */
+.center-logo-card {
+  position: absolute; top:50%; left:50%; transform: translate(-50%,-50%);
+  width: 150px; height: 150px; border-radius: 28px;
+  background: linear-gradient(135deg, #ffffff 0%, #fff 25%, #0f172a 100%);
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.45),
+    0 0 70px rgba(255,0,102,0.35),
+    0 0 70px rgba(0,102,255,0.35);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  z-index:100;
+  border:3px solid transparent;
+  border-image: linear-gradient(1
+<truncated 47138 bytes>
+
+NOTE: The output was truncated because it was too long. Use a more targeted query or a smaller range to get the information you need.
