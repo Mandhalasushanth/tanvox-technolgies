@@ -4630,10 +4630,10 @@ const About = () => {
     },
     {
       initials: "HL",
-      name: "Harshavardhan Lalam",
+      name: "Mohammad Arif Pasha",
       role: "MARKETING HEAD",
-      desc: "Marketing strategist building brand excellence",
-      linkedin: "https://www.linkedin.com/in/harshavardhan-lalam-411b64288",
+      desc: "Leading product strategy and innovation to deliver customer-centric solutions, drive business growth, and build products that create lasting impact",
+      linkedin: "https://www.linkedin.com/in/mohammad-arif-pasha",
     },
   ];
 
