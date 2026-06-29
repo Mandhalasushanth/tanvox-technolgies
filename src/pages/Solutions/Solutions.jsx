@@ -1943,7 +1943,7 @@ export default function Solutions() {
               variants={staggerContainer}
             >
               <motion.h1 className="solutions-hero-title" variants={fadeUp}>
-                Business-Focused Solutions for <span className="highlighted-gradient">Digital Transformation</span>
+                Business-Focused Solutions for Digital Transformation
               </motion.h1>
               <motion.h2 className="solutions-hero-subtitle" variants={fadeUp}>
                 Innovative Solutions Designed to Solve Real Business Challenges

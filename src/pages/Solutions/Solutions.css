@@ -530,7 +530,7 @@
 .solutions-hero-subtitle {
   font-size: 1.15rem; /* Reduced from 1.5rem */
   font-weight: 600;
-  color: #2563eb !important;
+  color: rgb(17, 114, 159) !important;
   margin-bottom: 1rem;
   line-height: 1.35;
 }
