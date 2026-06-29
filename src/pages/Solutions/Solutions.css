@@ -62,7 +62,7 @@
 
 .solutions-section-subtitle {
   font-family: var(--font-mono, "Space Grotesk", sans-serif);
-  font-size: 0.85rem !important;
+  font-size: 2rem !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.08em !important;
@@ -75,7 +75,7 @@
 }
 
 .solutions-section-title {
-  font-size: 1.85rem; /* Reduced from 2.5rem */
+  font-size: 2rem; /* Reduced from 2.5rem */
   font-weight: 800;
   line-height: 1.25;
   margin-bottom: 0.75rem;

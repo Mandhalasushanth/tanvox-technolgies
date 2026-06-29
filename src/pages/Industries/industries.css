@@ -22,7 +22,7 @@
 /* Typography Helpers */
 .ind-section-tag {
   font-family: var(--font-mono);
-  font-size: 0.85rem !important;
+  font-size: 1.6rem !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.08em !important;
