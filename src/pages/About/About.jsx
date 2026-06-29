@@ -4624,14 +4624,14 @@ const About = () => {
     {
       initials: "KA",
       name: "Kalvacherla Akhil",
-      role: "PROJECT MANAGER",
+      role: "OPERATIONS OFFICER",
       desc: "Operations expert driving efficiency and growth",
       linkedin: "https://www.linkedin.com/in/akhil-kalvacherla-35684a300",
     },
     {
       initials: "HL",
       name: "Mohammad Arif Pasha",
-      role: "MARKETING HEAD",
+      role: "PRODUCTION OFFICER",
       desc: "Leading product strategy and innovation to deliver customer-centric solutions, drive business growth, and build products that create lasting impact",
       linkedin: "https://www.linkedin.com/in/mohammad-arif-pasha",
     },

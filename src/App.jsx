@@ -1042,7 +1042,7 @@ function App() {
                       Ready-to-deploy enterprise platforms configured to accelerate development timelines, 
                       optimize workflows, and slash architectural overhead.
                     </p>
-                    <a href="#products" className="view-all-products-link">
+                    <a href="#products" className="view-all-products-link" style={{ color: "black" }}>
                       View All Products & Platforms &rarr;
                     </a>
                   </div>
@@ -1170,7 +1170,7 @@ function App() {
                         </div>
                         
 
-                        <a href="https://txhub.in/" target="_blank" rel="noopener noreferrer" className="view-demo-link text-red">Visit Website &rarr;</a>
+                        <a href="https://txhub.in/" target="_blank" rel="noopener noreferrer" className="view-demo-link text-red" style={{ color: "black" }}>Visit Website &rarr;</a>
                       </div>
                     </div>
 

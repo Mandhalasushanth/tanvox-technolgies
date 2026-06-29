@@ -883,13 +883,13 @@ button {
 
 .mobile-nav-link-btn:hover {
   background-color: var(--color-light-gray);
-  color: var(--color-red);
+  color: black;
 }
 
 .mobile-nav-link-btn.active-link {
-  color: var(--color-red);
-  background-color: rgba(255, 30, 60, 0.05);
-  border-left: 4px solid var(--color-red);
+  color:black;
+  background-color: rgba(246, 245, 245, 0.05);
+  border-left: black;
   padding-left: calc(1.25rem - 4px);
 }
 
@@ -8815,7 +8815,8 @@ button {
 }
 
 .accelerate-sub {
-  color: #ff1e3c !important; /* Replaced blue with red/pink theme */
+  color: light bule
+   !important; /* Replaced blue with red/pink theme */
 }
 
 .accelerate-p {
@@ -8831,7 +8832,7 @@ button {
 }
 
 .check-circle-blue {
-  background-color: #ff1e3c !important; /* Replace blue check circle with red */
+  background-color: var(--color-blue-light) !important; /* Replace blue check circle with red */
 }
 
 .partner-detail-card h4 {
@@ -11275,8 +11276,9 @@ section.products-platforms-section {
 }
 
 .partner-item .hero-trust-label {
-  color: var(--color-primary-pink);
-  background: rgba(255, 0, 102, 0.08);
+  color: black
+  ;
+  background: white;
   border: 1px solid rgba(255, 0, 102, 0.2);
   box-shadow: 0 2px 8px rgba(255, 0, 102, 0.04);
 }
@@ -11338,7 +11340,7 @@ section.products-platforms-section {
 .hero-trust-logo-text-nextgen {
   font-size: 0.75rem;
   font-weight: 800;
-  color: #ff0066; /* Match the primary pink theme */
+  color: var  ; /* Match the primary pink theme */
 }
 
 /* Hero section smaller certifications marquee */
@@ -11814,7 +11816,7 @@ section.products-platforms-section {
   text-decoration: none !important;
   background: var(--grad-primary) !important;
   color: #ffffff !important;
-  box-shadow: 0 8px 25px rgba(255, 30, 60, 0.25) !important;
+  /* box-shadow: 0 8px 25px rgba(255, 30, 60, 0.25) !important; */
   border: none !important;
 }
 
