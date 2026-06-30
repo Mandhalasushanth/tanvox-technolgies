@@ -364,6 +364,11 @@ button {
   z-index: 1200;
 }
 
+.nav-item-portfolio .mega-menu-panel {
+  max-width: 680px;
+  padding: 1.5rem 1.75rem;
+}
+
 .mega-menu-panel::before {
   content: "";
   position: absolute;
@@ -388,7 +393,11 @@ button {
   gap: 2rem;
 }
 
-.mega-menu-grid.portfolio-grid,
+.mega-menu-grid.portfolio-grid {
+  grid-template-columns: 1.15fr 1fr;
+  gap: 1.5rem;
+}
+
 .mega-menu-grid.collaboration-grid {
   grid-template-columns: 1.6fr 1fr;
   gap: 2.5rem;
@@ -8786,6 +8795,7 @@ button {
   border-radius: 50% !important;
   z-index: 0 !important;
   pointer-events: none !important;
+  animation: float-acc-shape-1 10s ease-in-out infinite alternate !important;
 }
 
 .accelerate-bg-shape-2 {
@@ -8802,6 +8812,16 @@ button {
   border-radius: 50% !important;
   z-index: 0 !important;
   pointer-events: none !important;
+  animation: float-acc-shape-2 12s ease-in-out infinite alternate !important;
+}
+
+@keyframes float-acc-shape-1 {
+  0% { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(20px) rotate(15deg); }
+}
+@keyframes float-acc-shape-2 {
+  0% { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(-25px) rotate(-15deg); }
 }
 
 .accelerate-left,

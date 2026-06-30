@@ -12,6 +12,8 @@ import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
 // Page Imports
+import logo from './assets/logo.png';
+import './pages/About/About.css';
 import About from './pages/About/About';
 import Services from './pages/Services/Services';
 import Solutions from './pages/Solutions/Solutions';
@@ -141,6 +143,23 @@ function App() {
 
   const scrollXRef = useRef(0);
   const isPausedRef = useRef(false);
+  
+  const handleCardMouseMove = (e, strength = 4) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const rx = -((y - rect.height / 2) / (rect.height / 2)) * strength;
+    const ry = ((x - rect.width / 2) / (rect.width / 2)) * strength;
+    e.currentTarget.style.transition = "transform 0.08s linear, box-shadow 0.08s linear, border-color 0.08s linear";
+    e.currentTarget.style.transform = `perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(8px) scale(1.025)`;
+    e.currentTarget.style.boxShadow = `0 15px 35px rgba(0,26,114,0.06), 0 5px 15px rgba(0,26,114,0.03)`;
+  };
+
+  const handleCardMouseLeave = (e) => {
+    e.currentTarget.style.transition = "transform 0.5s cubic-bezier(0.23,1,0.32,1), box-shadow 0.5s ease, border-color 0.5s ease";
+    e.currentTarget.style.transform = "";
+    e.currentTarget.style.boxShadow = "";
+  };
   const animationFrameIdRef = useRef(null);
   const illustrationRef = useRef(null);
   const [subscriberEmail, setSubscriberEmail] = useState("");
@@ -524,50 +543,19 @@ function App() {
       )
     );
 
-    // Parallax for Accelerate Shapes
-    tweens.push(
-      gsap.fromTo('.accelerate-bg-shape-1', 
-        { y: -70, x: -20, rotate: 0 },
-        {
-          y: 70,
-          x: 20,
-          rotate: 45,
-          scrollTrigger: {
-            trigger: '.accelerate-banner-section',
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: 1
-          }
-        }
-      )
-    );
-    tweens.push(
-      gsap.fromTo('.accelerate-bg-shape-2', 
-        { y: 70, x: 20, rotate: 0 },
-        {
-          y: -70,
-          x: -20,
-          rotate: -45,
-          scrollTrigger: {
-            trigger: '.accelerate-banner-section',
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: 1
-          }
-        }
-      )
-    );
-
     // Scroll reveal animation for home page sections
     const revealElements = gsap.utils.toArray('.services-section, .products-platforms-section, .directory-showcase-section, .accelerate-banner-section');
     revealElements.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      const isInViewport = rect.top < window.innerHeight;
+
       tweens.push(
         gsap.fromTo(el,
-          { opacity: 0, y: 50 },
+          { opacity: isInViewport ? 1 : 0, y: isInViewport ? 0 : 40 },
           {
             opacity: 1,
             y: 0,
-            duration: 1.0,
+            duration: isInViewport ? 0.1 : 0.8,
             ease: 'power2.out',
             scrollTrigger: {
               trigger: el,
@@ -580,8 +568,46 @@ function App() {
       );
     });
 
+    // Why Choose Tanvox — orbit section animations (Unified into one lightweight trigger)
+    const wcSection = document.getElementById("why-choose");
+    const wcRect = wcSection ? wcSection.getBoundingClientRect() : null;
+    const wcInViewport = wcRect ? wcRect.top < window.innerHeight : false;
+
+    tweens.push(
+      gsap.to([".wc-gsap-header", ".wc-gsap-center", ".wc-gsap-card"], {
+        opacity: 1,
+        y: 0,
+        x: 0,
+        scale: 1,
+        duration: wcInViewport ? 0.1 : 0.8,
+        ease: "power3.out",
+        stagger: wcInViewport ? 0 : 0.06,
+        scrollTrigger: {
+          trigger: "#why-choose",
+          start: "top 80%",
+          once: true
+        }
+      })
+    );
+
+    // Continuous signal-flow dashed line paths loop
+    tweens.push(
+      gsap.to(".wc-connectors path", {
+        strokeDashoffset: -20,
+        repeat: -1,
+        ease: "none",
+        duration: 1.5,
+      })
+    );
+
+    // Force refresh triggers after layout stabilizes
+    const refreshTimeout = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 150);
+
     return () => {
       tweens.forEach(t => t.kill());
+      clearTimeout(refreshTimeout);
     };
   }, [currentHash]);
 
@@ -1177,6 +1203,332 @@ function App() {
                   </div>
                 </div>
               </div>
+            </section>
+
+            {/* Why Choose Tanvox Technologies */}
+            <section className="wc-section" id="why-choose">
+              {/* Dot patterns */}
+              <div className="wc-dots wc-dots-left" aria-hidden="true"></div>
+              <div className="wc-dots wc-dots-right" aria-hidden="true"></div>
+
+              <div className="wc-inner">
+                {/* ── Header ── */}
+                <div className="wc-header wc-gsap-header">
+                  <h2 className="wc-title">
+                    Why Choose <span className="wc-brand-tan">Tan</span>
+                    <span className="wc-brand-vox">vox</span> Technologies?
+                  </h2>
+                  <p className="wc-subtitle">
+                    We combine innovation, expertise, and a customer-first approach
+                    <br />
+                    to deliver technology solutions that drive real business impact.
+                  </p>
+                </div>
+
+                {/* ── 3-column orbit layout ── */}
+                <div className="wc-orbit-layout">
+                  {/* LEFT cards */}
+                  <div className="wc-col wc-col-left">
+                    {[
+                      {
+                        id: "innovative",
+                        accent: "#EC4899",
+                        iconBg: "rgba(236,72,153,0.10)",
+                        title: "Innovative Solutions",
+                        desc: "We leverage the latest technologies to build future-ready solutions that drive innovation and growth.",
+                        icon: (
+                          <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="#EC4899"
+                            strokeWidth="1.8"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .5 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5v1.5a3 3 0 0 0 6 0V14z" />
+                            <path d="M9 18h6" />
+                            <path d="M10 22h4" />
+                            <path d="M12 2v2" />
+                            <path d="M4.9 4.9l1.4 1.4" />
+                            <path d="M17.7 6.3l1.4-1.4" />
+                            <path d="M2 12h2" />
+                            <path d="M20 12h2" />
+                          </svg>
+                        ),
+                      },
+                      {
+                        id: "quality",
+                        accent: "#7C3AED",
+                        iconBg: "rgba(124,58,237,0.10)",
+                        title: "Quality & Reliability",
+                        desc: "We are committed to delivering high-quality, secure, and reliable solutions that you can trust.",
+                        icon: (
+                          <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="#7C3AED"
+                            strokeWidth="1.8"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            <path d="m9 12 2 2 4-4" />
+                          </svg>
+                        ),
+                      },
+                      {
+                        id: "customer",
+                        accent: "#10B981",
+                        iconBg: "rgba(16,185,129,0.10)",
+                        title: "Customer-Centric Approach",
+                        desc: "Your success is our priority. We listen, understand, and deliver solutions that align with your business goals.",
+                        icon: (
+                          <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="#10B981"
+                            strokeWidth="1.8"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                          </svg>
+                        ),
+                      },
+                    ].map((item, i) => (
+                      <div
+                        key={item.id}
+                        className="wc-card wc-card-left wc-gsap-card"
+                        style={{
+                          "--accent": item.accent,
+                          "--icon-bg": item.iconBg,
+                          "--delay": `${i * 0.12}s`,
+                        }}
+                        onMouseMove={(e) => handleCardMouseMove(e, 4.5)}
+                        onMouseLeave={handleCardMouseLeave}
+                      >
+                        <div className="wc-card-icon">
+                          <div className="wc-icon-circle">{item.icon}</div>
+                        </div>
+                        <div className="wc-card-body">
+                          <h3 className="wc-card-title">{item.title}</h3>
+                          <div className="wc-card-bar"></div>
+                          <p className="wc-card-desc">{item.desc}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* CENTER orbit */}
+                  <div className="wc-center wc-gsap-center">
+                    {/* Outer ring */}
+                    <div className="wc-orbit-ring wc-ring-outer"></div>
+                    {/* Inner ring */}
+                    <div className="wc-orbit-ring wc-ring-inner"></div>
+
+                    {/* Dashed connector lines */}
+                    <svg
+                      className="wc-connectors"
+                      viewBox="0 0 260 400"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      {/* Card 1 (Innovative Solutions) → Dot 1 */}
+                      <path
+                        d="M 0,80 L 15,80 L 40,137"
+                        stroke="#d1d5db"
+                        strokeWidth="1.2"
+                        strokeDasharray="5 5"
+                        strokeLinecap="round"
+                      />
+                      {/* Card 2 (Quality & Reliability) → Dot 2 */}
+                      <path
+                        d="M 0,200 L 20,200"
+                        stroke="#d1d5db"
+                        strokeWidth="1.2"
+                        strokeDasharray="5 5"
+                        strokeLinecap="round"
+                      />
+                      {/* Card 3 (Customer-Centric) → Dot 3 */}
+                      <path
+                        d="M 0,320 L 15,320 L 40,263"
+                        stroke="#d1d5db"
+                        strokeWidth="1.2"
+                        strokeDasharray="5 5"
+                        strokeLinecap="round"
+                      />
+                      {/* Card 4 (Agile & Transparent) → Dot 4 */}
+                      <path
+                        d="M 260,80 L 245,80 L 220,137"
+                        stroke="#d1d5db"
+                        strokeWidth="1.2"
+                        strokeDasharray="5 5"
+                        strokeLinecap="round"
+                      />
+                      {/* Card 5 (On-Time Delivery) → Dot 5 */}
+                      <path
+                        d="M 260,200 L 240,200"
+                        stroke="#d1d5db"
+                        strokeWidth="1.2"
+                        strokeDasharray="5 5"
+                        strokeLinecap="round"
+                      />
+                      {/* Card 6 (Long-Term Partnership) → Dot 6 */}
+                      <path
+                        d="M 260,320 L 245,320 L 220,263"
+                        stroke="#d1d5db"
+                        strokeWidth="1.2"
+                        strokeDasharray="5 5"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+
+                    {/* Animated orbit dots */}
+                    <div
+                      className="wc-dot wc-dot-1"
+                      style={{ background: "#EC4899" }}
+                    ></div>
+                    <div
+                      className="wc-dot wc-dot-2"
+                      style={{ background: "#7C3AED" }}
+                    ></div>
+                    <div
+                      className="wc-dot wc-dot-3"
+                      style={{ background: "#10B981" }}
+                    ></div>
+                    <div
+                      className="wc-dot wc-dot-4"
+                      style={{ background: "#3B82F6" }}
+                    ></div>
+                    <div
+                      className="wc-dot wc-dot-5"
+                      style={{ background: "#F59E0B" }}
+                    ></div>
+                    <div
+                      className="wc-dot wc-dot-6"
+                      style={{ background: "#8B5CF6" }}
+                    ></div>
+
+                    {/* Logo */}
+                    <div className="wc-logo-wrap">
+                      <img
+                        src={logo}
+                        alt="Tanvox Technologies"
+                        className="wc-logo-img"
+                      />
+                    </div>
+
+                    {/* Success Commitment Text */}
+                    <div className="wc-commitment-wrap">
+                      <div className="wc-commitment-text">
+                        Your Success is <br />
+                        <span className="wc-comm-our">Our</span>{" "}
+                        <span className="wc-comm-commit">Commitment</span>
+                      </div>
+                      <div className="wc-commitment-bar"></div>
+                    </div>
+                  </div>
+
+                  {/* RIGHT cards */}
+                  <div className="wc-col wc-col-right">
+                    {[
+                      {
+                        id: "agile",
+                        accent: "#3B82F6",
+                        iconBg: "rgba(59,130,246,0.10)",
+                        title: "Agile & Transparent Process",
+                        desc: "We follow agile methodologies and maintain clear communication at every step of the project.",
+                        icon: (
+                          <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="#3B82F6"
+                            strokeWidth="1.8"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <path d="M4.5 16.5c-1.5 1.26-2 3.5-2 3.5s2.24-.5 3.5-2c1.39-1.39 2.36-3.6 2.36-3.6s-2.2-.97-3.6-2.36z" />
+                            <path d="M14 9a3 3 0 0 1-3 3" />
+                            <path d="M9 15l-1.5 3" />
+                            <path d="M15 9l3-1.5" />
+                            <path d="M12 15l-3-3" />
+                            <path d="M18 15h2" />
+                            <path d="M22 2l-3 5-6 6-5-5 6-6z" />
+                          </svg>
+                        ),
+                      },
+                      {
+                        id: "ontime",
+                        accent: "#F59E0B",
+                        iconBg: "rgba(245,158,11,0.10)",
+                        title: "On-Time Delivery",
+                        desc: "We value your time and ensure projects are delivered on schedule, every time, without compromise.",
+                        icon: (
+                          <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="#F59E0B"
+                            strokeWidth="1.8"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 12" />
+                          </svg>
+                        ),
+                      },
+                      {
+                        id: "partnership",
+                        accent: "#8B5CF6",
+                        iconBg: "rgba(139,92,246,0.10)",
+                        title: "Long-Term Partnership",
+                        desc: "We build lasting relationships based on trust, collaboration, and a shared commitment to your success.",
+                        icon: (
+                          <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="#8B5CF6"
+                            strokeWidth="1.8"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <path d="m11 17 2 2a1 1 0 0 0 1.4 0l4-4a1 1 0 0 0 0-1.4l-2.6-2.6a1 1 0 0 0-1.4 0L13 12.5" />
+                            <path d="m13 12.5-1.5-1.5a1 1 0 0 0-1.4 0l-4 4a1 1 0 0 0 0 1.4l2.6 2.6a1 1 0 0 0 1.4 0L11 17" />
+                            <path d="M5 13c-2.2-2.2-2.2-5.79 0-8 2.2-2.2 5.79-2.2 8 0l1.5 1.5" />
+                            <path d="M19 11c2.2 2.2 2.2 5.79 0 8-2.2 2.2-5.79 2.2-8 0l-1.5-1.5" />
+                          </svg>
+                        ),
+                      },
+                    ].map((item, i) => (
+                      <div
+                        key={item.id}
+                        className="wc-card wc-card-right wc-gsap-card"
+                        style={{
+                          "--accent": item.accent,
+                          "--icon-bg": item.iconBg,
+                          "--delay": `${i * 0.12 + 0.06}s`,
+                        }}
+                        onMouseMove={(e) => handleCardMouseMove(e, 4.5)}
+                        onMouseLeave={handleCardMouseLeave}
+                      >
+                        <div className="wc-card-icon">
+                          <div className="wc-icon-circle">{item.icon}</div>
+                        </div>
+                        <div className="wc-card-body">
+                          <h3 className="wc-card-title">{item.title}</h3>
+                          <div className="wc-card-bar"></div>
+                          <p className="wc-card-desc">{item.desc}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                {/* /wc-orbit-layout */}
+              </div>
+              {/* /wc-inner */}
             </section>
 
             {/* Directory Solutions & Technology Expertise Showcase */}

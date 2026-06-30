@@ -255,94 +255,7 @@ export default function CaseStudyDetail({ studyId }) {
           <div className="saas-divider" style={{ margin: 0 }}></div>
 
           {/* ================= SECTION 3: SCREENSHOTS GALLERY ================= */}
-          <motion.div className="saas-gallery-section" variants={itemVariants}>
-            <h3 style={{ fontSize: '1.5rem', fontWeight: '700', marginBottom: '8px', color: '#0f172a', display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <span style={{ color: study.colorAccent }}>🖼️</span> Platform Screenshots & Features
-            </h3>
-            <p style={{ color: '#64748b', marginBottom: '32px', fontSize: '0.95rem' }}>
-              Click on any screenshot to view a high-resolution preview inside the interactive zoom gallery.
-            </p>
-             <div className="case-study-gallery-grid">
-              {/* Chrome Mockup Carousel */}
-              <div className="saas-showcase-frame" style={{ margin: 0, width: '100%' }}>
-                <div className="saas-frame-chrome">
-                  <div className="chrome-window-dots">
-                    <span className="window-dot dot-red"></span>
-                    <span className="window-dot dot-yellow"></span>
-                    <span className="window-dot dot-green"></span>
-                  </div>
-                  <div className="chrome-address-bar">showcase.tanvox.com/case-study/{study.id}</div>
-                  <div className="chrome-nav-icons">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                  </div>
-                </div>
-
-                <div 
-                  className="saas-showcase-viewer" 
-                  style={{ cursor: 'zoom-in' }}
-                  onClick={() => setLightboxImg(study.screens[activeScreenIndex])}
-                >
-                  <AnimatePresence mode="wait">
-                    <motion.img
-                      key={activeScreenIndex}
-                      src={study.screens[activeScreenIndex]}
-                      alt={`${study.title} Screen Showcase ${activeScreenIndex + 1}`}
-                      className="saas-viewer-img"
-                      initial={{ opacity: 0, scale: 0.98 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 1.02 }}
-                      transition={{ duration: 0.4 }}
-                    />
-                  </AnimatePresence>
-
-                  <div className="saas-slider-overlay"></div>
-
-                  <button className="saas-viewer-nav nav-prev" onClick={(e) => { e.stopPropagation(); handlePrev(); }}>&#8249;</button>
-                  <button className="saas-viewer-nav nav-next" onClick={(e) => { e.stopPropagation(); handleNext(); }}>&#8250;</button>
-                </div>
-
-                {/* Micro thumbnails panel */}
-                <div className="saas-viewer-thumbs">
-                  {study.screens.map((screen, idx) => (
-                    <button
-                      key={idx}
-                      className={`saas-thumb-btn ${activeScreenIndex === idx ? 'active' : ''}`}
-                      onClick={() => setActiveScreenIndex(idx)}
-                      style={{ borderActiveColor: study.colorAccent }}
-                    >
-                      <img src={screen} alt={`Thumbnail ${idx + 1}`} />
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Interactive Platform Grid Gallery */}
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
-                {study.screens.map((screen, idx) => (
-                  <motion.div
-                    key={idx}
-                    className="saas-gallery-item"
-                    style={{ cursor: 'zoom-in', overflow: 'hidden', borderRadius: '12px', border: '1px solid #e2e8f0', background: '#0f172a' }}
-                    initial={{ opacity: 0, y: 15 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: idx * 0.08 }}
-                    onClick={() => setLightboxImg(screen)}
-                  >
-                    <img 
-                      src={screen} 
-                      alt={`${study.title} Grid Screen ${idx + 1}`} 
-                      style={{ width: '100%', height: '140px', objectFit: 'contain', transition: 'transform 0.3s' }}
-                      onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
-                      onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
-                    />
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-
-          <div className="saas-divider" style={{ margin: 0 }}></div>
+           
 
           {/* ================= SECTION 4: REQUEST DEMO ================= */}
           <motion.div 
@@ -354,7 +267,8 @@ export default function CaseStudyDetail({ studyId }) {
               background: `linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, ${study.colorAccent}08 100%)`,
               border: `1px solid ${study.colorAccent}25`,
               position: 'relative',
-              overflow: 'hidden'
+              overflow: 'hidden',
+              marginBottom: '60px'
             }}
           >
             <div style={{ position: 'absolute', top: '-50px', left: '-50px', width: '200px', height: '200px', borderRadius: '50%', background: `${study.colorAccent}05`, filter: 'blur(30px)' }}></div>

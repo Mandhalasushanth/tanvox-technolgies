@@ -1537,6 +1537,14 @@ export default function Solutions() {
   const scrollRef = useRef(null);
   const [clickedIndex, setClickedIndex] = useState(null);
   const [activeDetailIndex, setActiveDetailIndex] = useState(null); // No card expanded by default
+  const [activeStep, setActiveStep] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveStep((prev) => (prev + 1) % 8);
+    }, 1500);
+    return () => clearInterval(interval);
+  }, []);
 
   const cardsData = [
     {
@@ -2555,8 +2563,8 @@ export default function Solutions() {
               <div className="solutions-timeline-container">
                 <div className="solutions-timeline-line"></div>
                 <div className="solutions-timeline-steps">
-                  <div className="solutions-timeline-step">
-                    <div className="solutions-timeline-number">01</div>
+                  <div className={`solutions-timeline-step ${activeStep === 0 ? "active-step" : ""}`}>
+                    <div className="solutions-timeline-number">{activeStep > 0 ? "✓" : "01"}</div>
                     <div className="solutions-timeline-icon">
                       <svg
                         viewBox="0 0 24 24"
@@ -2573,8 +2581,8 @@ export default function Solutions() {
                     </span>
                   </div>
 
-                  <div className="solutions-timeline-step">
-                    <div className="solutions-timeline-number">02</div>
+                  <div className={`solutions-timeline-step ${activeStep === 1 ? "active-step" : ""}`}>
+                    <div className="solutions-timeline-number">{activeStep > 1 ? "✓" : "02"}</div>
                     <div className="solutions-timeline-icon">
                       <svg
                         viewBox="0 0 24 24"
@@ -2591,8 +2599,8 @@ export default function Solutions() {
                     </span>
                   </div>
 
-                  <div className="solutions-timeline-step">
-                    <div className="solutions-timeline-number">03</div>
+                  <div className={`solutions-timeline-step ${activeStep === 2 ? "active-step" : ""}`}>
+                    <div className="solutions-timeline-number">{activeStep > 2 ? "✓" : "03"}</div>
                     <div className="solutions-timeline-icon">
                       <svg
                         viewBox="0 0 24 24"
@@ -2609,8 +2617,8 @@ export default function Solutions() {
                     </span>
                   </div>
 
-                  <div className="solutions-timeline-step">
-                    <div className="solutions-timeline-number">04</div>
+                  <div className={`solutions-timeline-step ${activeStep === 3 ? "active-step" : ""}`}>
+                    <div className="solutions-timeline-number">{activeStep > 3 ? "✓" : "04"}</div>
                     <div className="solutions-timeline-icon">
                       <svg
                         viewBox="0 0 24 24"
@@ -2627,8 +2635,8 @@ export default function Solutions() {
                     </span>
                   </div>
 
-                  <div className="solutions-timeline-step">
-                    <div className="solutions-timeline-number">05</div>
+                  <div className={`solutions-timeline-step ${activeStep === 4 ? "active-step" : ""}`}>
+                    <div className="solutions-timeline-number">{activeStep > 4 ? "✓" : "05"}</div>
                     <div className="solutions-timeline-icon">
                       <svg
                         viewBox="0 0 24 24"
@@ -2645,8 +2653,8 @@ export default function Solutions() {
                     </span>
                   </div>
 
-                  <div className="solutions-timeline-step">
-                    <div className="solutions-timeline-number">06</div>
+                  <div className={`solutions-timeline-step ${activeStep === 5 ? "active-step" : ""}`}>
+                    <div className="solutions-timeline-number">{activeStep > 5 ? "✓" : "06"}</div>
                     <div className="solutions-timeline-icon">
                       <svg
                         viewBox="0 0 24 24"
@@ -2660,8 +2668,8 @@ export default function Solutions() {
                     <span className="solutions-timeline-name">Deployment</span>
                   </div>
 
-                  <div className="solutions-timeline-step">
-                    <div className="solutions-timeline-number">07</div>
+                  <div className={`solutions-timeline-step ${activeStep === 6 ? "active-step" : ""}`}>
+                    <div className="solutions-timeline-number">{activeStep > 6 ? "✓" : "07"}</div>
                     <div className="solutions-timeline-icon">
                       <svg
                         viewBox="0 0 24 24"
@@ -2678,8 +2686,8 @@ export default function Solutions() {
                     </span>
                   </div>
 
-                  <div className="solutions-timeline-step">
-                    <div className="solutions-timeline-number">08</div>
+                  <div className={`solutions-timeline-step ${activeStep === 7 ? "active-step" : ""}`}>
+                    <div className="solutions-timeline-number">{activeStep > 7 ? "✓" : "08"}</div>
                     <div className="solutions-timeline-icon">
                       <svg
                         viewBox="0 0 24 24"

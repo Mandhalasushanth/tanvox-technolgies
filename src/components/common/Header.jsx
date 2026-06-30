@@ -48,28 +48,7 @@ const portfolioItems = [
     ),
     color: "#EC4899",
   },
-  {
-    title: "Technologies",
-    desc: "Advanced technologies we use to deliver excellence.",
-    path: "#portfolio-tech",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        width="20"
-        height="20"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <polygon points="12 2 2 7 12 12 22 7 12 2" />
-        <polyline points="2 17 12 22 22 17" />
-        <polyline points="2 12 12 17 22 12" />
-      </svg>
-    ),
-    color: "#10B981",
-  },
+
   {
     title: "Testimonials",
     desc: "Trusted by businesses worldwide.",
@@ -224,89 +203,89 @@ const menuItems = [
     ),
     color: "#3B82F6",
   },
-  {
-    title: "Resources",
-    desc: "Access guides, tools, and documentation.",
-    path: "#menu-resources",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        width="16"
-        height="16"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-        <polyline points="14 2 14 8 20 8" />
-      </svg>
-    ),
-    color: "#10B981",
-  },
-  {
-    title: "Blog & Insights",
-    desc: "Stay updated with technology trends.",
-    path: "#menu-blog",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        width="16"
-        height="16"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z" />
-      </svg>
-    ),
-    color: "#F59E0B",
-  },
-  {
-    title: "Whitepapers",
-    desc: "In-depth research and technical briefs.",
-    path: "#menu-whitepapers",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        width="16"
-        height="16"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-      </svg>
-    ),
-    color: "#EF4444",
-  },
-  {
-    title: "Webinars",
-    desc: "Watch technical panels and event recordings.",
-    path: "#menu-webinars",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        width="16"
-        height="16"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <polygon points="23 7 16 12 23 17 23 7" />
-        <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
-      </svg>
-    ),
-    color: "#EC4899",
-  },
-];
+  // {
+  //   title: "Resources",
+  //   desc: "Access guides, tools, and documentation.",
+  //   path: "#menu-resources",
+  //   icon: (
+  //     <svg
+  //       viewBox="0 0 24 24"
+  //       width="16"
+  //       height="16"
+  //       fill="none"
+  //       stroke="currentColor"
+  //       strokeWidth="2.5"
+  //       strokeLinecap="round"
+  //       strokeLinejoin="round"
+  //     >
+  //       <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+  //       <polyline points="14 2 14 8 20 8" />
+  //     </svg>
+  //   ),
+  //   color: "#10B981",
+  // },
+  // {
+  //   title: "Blog & Insights",
+  //   desc: "Stay updated with technology trends.",
+  //   path: "#menu-blog",
+  //   icon: (
+  //     <svg
+  //       viewBox="0 0 24 24"
+  //       width="16"
+  //       height="16"
+  //       fill="none"
+  //       stroke="currentColor"
+  //       strokeWidth="2.5"
+  //       strokeLinecap="round"
+  //       strokeLinejoin="round"
+  //     >
+  //       <path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z" />
+  //     </svg>
+  //   ),
+  //   color: "#F59E0B",
+  // },
+  // {
+  //   title: "Whitepapers",
+  //   desc: "In-depth research and technical briefs.",
+  //   path: "#menu-whitepapers",
+  //   icon: (
+  //     <svg
+  //       viewBox="0 0 24 24"
+  //       width="16"
+  //       height="16"
+  //       fill="none"
+  //       stroke="currentColor"
+  //       strokeWidth="2.5"
+  //       strokeLinecap="round"
+  //       strokeLinejoin="round"
+  //     >
+  //       <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+  //     </svg>
+  //   ),
+  //   color: "#EF4444",
+  // },
+  // {
+  //   title: "Webinars",
+  //   desc: "Watch technical panels and event recordings.",
+  //   path: "#menu-webinars",
+  //   icon: (
+  //     <svg
+  //       viewBox="0 0 24 24"
+  //       width="16"
+  //       height="16"
+  //       fill="none"
+  //       stroke="currentColor"
+  //       strokeWidth="2.5"
+  //       strokeLinecap="round"
+  //       strokeLinejoin="round"
+  //     >
+    //     <polygon points="23 7 16 12 23 17 23 7" />
+    //     <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+    //   </svg>
+    // ),
+//     color: "#EC4899",
+//   },
+ ];
 
 const moreItems = [
   {
@@ -372,9 +351,32 @@ const moreItems = [
     ),
     color: "#FF1E3C",
   },
+  {
+    title: "Technologies",
+    desc: "Advanced technologies we use to deliver excellence.",
+    path: "#portfolio-tech",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        width="16"
+        height="16"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <polygon points="12 2 2 7 12 12 22 7 12 2" />
+        <polyline points="2 17 12 22 22 17" />
+        <polyline points="2 12 12 17 22 12" />
+      </svg>
+    ),
+    color: "#10B981",
+  },
 ];
 
 const navigationData = [
+  { id: "home", label: "Home", path: "#home" },
   { id: "about", label: "About Us", path: "#about" },
   { id: "more", label: "Discover", path: "#more", hasSimpleDropdown: true },
   {
@@ -387,7 +389,6 @@ const navigationData = [
     id: "collaboration",
     label: "Collaboration",
     path: "#collaboration",
-    hasMegaMenu: true,
   },
   { id: "menu", label: "Explore", path: "#menu", hasSimpleDropdown: true },
   { id: "contact", label: "Contact Us", path: "#contact" },
