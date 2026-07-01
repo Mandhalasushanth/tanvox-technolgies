@@ -10254,6 +10254,7 @@ section.products-platforms-section {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03) !important;
   transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1) !important;
   z-index: 1;
+  cursor: pointer;
 }
 
 /* Background Hover Reveal */

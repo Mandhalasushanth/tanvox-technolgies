@@ -5,8 +5,8 @@ import logo from "../../assets/logo.png";
 
 const portfolioItems = [
   {
-    title: "Projects",
-    desc: "Explore our successful projects across industries.",
+    title: "Products",
+    desc: "Explore our successful products across industries.",
     path: "#portfolio-projects",
     icon: (
       <svg

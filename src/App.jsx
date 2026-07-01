@@ -786,7 +786,7 @@ function App() {
                   <div className="services-carousel-track">
                     {/* --- Group 1 --- */}
                     {/* Card 1: Software Development */}
-                    <div className="service-card service-card-blue">
+                    <div className="service-card service-card-blue" onClick={() => window.location.hash = '#services'}>
                       <div className="service-card-image-wrapper">
                         <img src={softwareDevImg} alt="Software Development Services" className="service-card-img" />
                       </div>
@@ -802,7 +802,7 @@ function App() {
                     </div>
    
                     {/* Card 2: Cloud Services */}
-                    <div className="service-card service-card-purple">
+                    <div className="service-card service-card-purple" onClick={() => window.location.hash = '#services'}>
                       <div className="service-card-image-wrapper">
                         <img src={cloudServicesImg} alt="Cloud Services" className="service-card-img" />
                       </div>
@@ -818,7 +818,7 @@ function App() {
                     </div>
    
                     {/* Card 3: DevOps & Automation */}
-                    <div className="service-card service-card-red">
+                    <div className="service-card service-card-red" onClick={() => window.location.hash = '#services'}>
                       <div className="service-card-image-wrapper">
                         <img src={devopsAutomationImg} alt="DevOps & Automation" className="service-card-img" />
                       </div>
@@ -834,7 +834,7 @@ function App() {
                     </div>
    
                     {/* Card 4: AI & Intelligent Automation */}
-                    <div className="service-card service-card-blue">
+                    <div className="service-card service-card-blue" onClick={() => window.location.hash = '#services'}>
                       <div className="service-card-image-wrapper">
                         <img src={aiAutomationImg} alt="AI & Intelligent Automation" className="service-card-img" />
                       </div>
@@ -850,7 +850,7 @@ function App() {
                     </div>
    
                     {/* Card 5: Cybersecurity Services */}
-                    <div className="service-card service-card-purple">
+                    <div className="service-card service-card-purple" onClick={() => window.location.hash = '#services'}>
                       <div className="service-card-image-wrapper">
                         <img src={cybersecurityImg} alt="Cybersecurity Services" className="service-card-img" />
                       </div>
@@ -866,7 +866,7 @@ function App() {
                     </div>
    
                     {/* Card 6: IT Infrastructure Services */}
-                    <div className="service-card service-card-red">
+                    <div className="service-card service-card-red" onClick={() => window.location.hash = '#services'}>
                       <div className="service-card-image-wrapper">
                         <img src={itInfrastructureImg} alt="IT Infrastructure Services" className="service-card-img" />
                       </div>
@@ -882,7 +882,7 @@ function App() {
                     </div>
    
                     {/* Card 7: Managed IT Services */}
-                    <div className="service-card service-card-blue">
+                    <div className="service-card service-card-blue" onClick={() => window.location.hash = '#services'}>
                       <div className="service-card-image-wrapper">
                         <img src={managedItImg} alt="Managed IT Services" className="service-card-img" />
                       </div>
@@ -898,7 +898,7 @@ function App() {
                     </div>
    
                     {/* Card 8: Support & Maintenance */}
-                    <div className="service-card service-card-purple">
+                    <div className="service-card service-card-purple" onClick={() => window.location.hash = '#services'}>
                       <div className="service-card-image-wrapper">
                         <img src={supportMaintenanceImg} alt="Support & Maintenance" className="service-card-img" />
                       </div>
@@ -915,7 +915,7 @@ function App() {
 
                     {/* --- Group 2 (Duplicate for loop) --- */}
                     {/* Card 1: Software Development */}
-                    <div className="service-card service-card-blue">
+                    <div className="service-card service-card-blue" onClick={() => window.location.hash = '#services'}>
                       <div className="service-card-image-wrapper">
                         <img src={softwareDevImg} alt="Software Development Services" className="service-card-img" />
                       </div>
@@ -931,7 +931,7 @@ function App() {
                     </div>
    
                     {/* Card 2: Cloud Services */}
-                    <div className="service-card service-card-purple">
+                    <div className="service-card service-card-purple" onClick={() => window.location.hash = '#services'}>
                       <div className="service-card-image-wrapper">
                         <img src={cloudServicesImg} alt="Cloud Services" className="service-card-img" />
                       </div>
@@ -947,7 +947,7 @@ function App() {
                     </div>
    
                     {/* Card 3: DevOps & Automation */}
-                    <div className="service-card service-card-red">
+                    <div className="service-card service-card-red" onClick={() => window.location.hash = '#services'}>
                       <div className="service-card-image-wrapper">
                         <img src={devopsAutomationImg} alt="DevOps & Automation" className="service-card-img" />
                       </div>
@@ -963,7 +963,7 @@ function App() {
                     </div>
    
                     {/* Card 4: AI & Intelligent Automation */}
-                    <div className="service-card service-card-blue">
+                    <div className="service-card service-card-blue" onClick={() => window.location.hash = '#services'}>
                       <div className="service-card-image-wrapper">
                         <img src={aiAutomationImg} alt="AI & Intelligent Automation" className="service-card-img" />
                       </div>
@@ -979,7 +979,7 @@ function App() {
                     </div>
    
                     {/* Card 5: Cybersecurity Services */}
-                    <div className="service-card service-card-purple">
+                    <div className="service-card service-card-purple" onClick={() => window.location.hash = '#services'}>
                       <div className="service-card-image-wrapper">
                         <img src={cybersecurityImg} alt="Cybersecurity Services" className="service-card-img" />
                       </div>
@@ -995,7 +995,7 @@ function App() {
                     </div>
    
                     {/* Card 6: IT Infrastructure Services */}
-                    <div className="service-card service-card-red">
+                    <div className="service-card service-card-red" onClick={() => window.location.hash = '#services'}>
                       <div className="service-card-image-wrapper">
                         <img src={itInfrastructureImg} alt="IT Infrastructure Services" className="service-card-img" />
                       </div>
@@ -1011,7 +1011,7 @@ function App() {
                     </div>
    
                     {/* Card 7: Managed IT Services */}
-                    <div className="service-card service-card-blue">
+                    <div className="service-card service-card-blue" onClick={() => window.location.hash = '#services'}>
                       <div className="service-card-image-wrapper">
                         <img src={managedItImg} alt="Managed IT Services" className="service-card-img" />
                       </div>
@@ -1027,7 +1027,7 @@ function App() {
                     </div>
    
                     {/* Card 8: Support & Maintenance */}
-                    <div className="service-card service-card-purple">
+                    <div className="service-card service-card-purple" onClick={() => window.location.hash = '#services'}>
                       <div className="service-card-image-wrapper">
                         <img src={supportMaintenanceImg} alt="Support & Maintenance" className="service-card-img" />
                       </div>
@@ -1068,7 +1068,7 @@ function App() {
                       Ready-to-deploy enterprise platforms configured to accelerate development timelines, 
                       optimize workflows, and slash architectural overhead.
                     </p>
-                    <a href="#products" className="view-all-products-link" style={{ color: "black" }}>
+                    <a href="#portfolio-projects" className="view-all-products-link" style={{ color: "black" }}>
                       View All Products & Platforms &rarr;
                     </a>
                   </div>
@@ -1664,10 +1664,7 @@ function App() {
                   </p>
 
                   <div className="accelerate-actions">
-                    <a href="#contact" className="acc-btn acc-btn-solid">Schedule a Consultation</a>
-                    <a href="#proposal" className="acc-btn acc-btn-outline">Request a Proposal</a>
-                    <a href="#experts" className="acc-btn acc-btn-outline">Speak With Our Experts</a>
-                    <a href="#journey" className="acc-btn acc-btn-outline">Start Your Digital Journey</a>
+                    <a href="#contact" className="acc-btn acc-btn-solid">Request a Proposal</a>
                   </div>
                 </div>
 
